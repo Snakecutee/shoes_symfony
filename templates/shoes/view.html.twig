@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <a href="{{ path('shoes_list') }}" class="btn btn-default">Back to Shoes List</a>
+    <hr/>
+    <h2 class="page-header">{{ shoes.name }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Category: {{ shoes.category }}</li>
+        <li class="list-group-item">Supplier: {{ shoes.supplier }}</li>
+        <li class="list-group-item">Price: {{ shoes.price }}</li>
+
+    </ul>
+
+{% endblock %}
