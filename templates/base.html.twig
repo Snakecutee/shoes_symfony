@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/starter-template/">
-    <title>{% block title %}Shoes Football Store{% endblock %}</title>
+    <title>{% block title %}Shoes Store{% endblock %}</title>
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     {% block stylesheets %}{% endblock %}
@@ -25,15 +25,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Shoes Football Store</a>
+            <a class="navbar-brand" href="#">Shoes Store</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{ path('shoes_list') }}" class="active">Home</a></li>
+                <li><a href="{{ path('shoes_list') }}" class="active">Nike</a></li>
+
+                 <li><a href="{{ path('part_list') }}" class="active">Inventory</a></li>
 
                 <li><a href="{{ path('supplier_list') }}" class="active">Supplier</a></li>
 
                 <li><a href="{{ path('customer_list') }}" class="active">Customer</a></li>
+
+               
 
             </ul>
         </div><!--/.nav-collapse -->

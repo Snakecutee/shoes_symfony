@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('part_list') }}" class="btn btn-default">Back to Part List</a>
+    <hr/>
+    <h2 class="page-header">{{ part.name }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Name: {{ part.name }}</li>
+        <li class="list-group-item">Price: {{ part.price }}</li>
+        <li class="list-group-item">Quantily: {{ part.quantily }}</li>
+    </ul>
+
+{% endblock %}
