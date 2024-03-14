@@ -16,7 +16,7 @@ class PartType extends AbstractType
             ->add('Name', TextType::class)
             ->add('Price', TextType::class)
             ->add('Quantily', TextType::class)
-           
+            ->add('supplier');
         ;
     }
 

@@ -90,24 +90,24 @@ class PartController extends AbstractController
             return false;
         }
         /**
-         * @Route("/customer/update/{id}", name="part_update")
+         * @Route("/part/update/{id}", name="part_update")
          */
         public function updateAction($id, Request $request)
         {
             $em = $this->getDoctrine()->getManager();
-            $customer = $em->getRepository(part::class)->find($id);
+            $part = $em->getRepository(part::class)->find($id);
     
-            $form = $this->createForm(PartType::class, $customer);
+            $form = $this->createForm(PartType::class, $part);
     
-            if ($this->saveChanges($form, $request, $customer)) {
+            if ($this->saveChanges($form, $request, $part)) {
                 $this->addFlash(
                     'notice',
-                    'Customer update success'
+                    'Part update success'
                 );
-                return $this->redirectToRoute('customer_list');
+                return $this->redirectToRoute('part_list');
             }
     
-            return $this->render('customer/update.html.twig', [
+            return $this->render('part/update.html.twig', [
                 'form' => $form->createView()
             ]);
         }

@@ -17,10 +17,7 @@ class Part
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $supplier_id;
+   
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -36,23 +33,18 @@ class Part
      * @ORM\Column(type="string", length=255)
      */
     private $quantily;
+    
+  /**
+     * @ORM\ManyToOne(targetEntity=Supplier::class, inversedBy="parts")
+     */
+    private $supplier;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getSupplierId(): ?int
-    {
-        return $this->supplier_id;
-    }
-
-    public function setSupplierId(?int $supplier_id): self
-    {
-        $this->supplier_id = $supplier_id;
-
-        return $this;
-    }
+   
 
     public function getName(): ?string
     {
@@ -86,6 +78,17 @@ class Part
     public function setQuantily(string $quantily): self
     {
         $this->quantily = $quantily;
+
+        return $this;
+    }
+    public function getSupplier(): ?Supplier
+    {
+        return $this->supplier;
+    }
+
+    public function setSupplier(?Supplier $supplier): self
+    {
+        $this->supplier = $supplier;
 
         return $this;
     }
